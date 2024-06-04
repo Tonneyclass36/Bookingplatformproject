@@ -1,0 +1,18 @@
+// HaircutBookingTest.java
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class HaircutBookingTest {
+    @Test
+    public void testIsAvailable() {
+        // Arrange
+        HaircutBooking booking = new HaircutBooking("John Doe", "Alice", "10:00 AM");
+
+        // Act
+        boolean isAvailable = booking.isAvailable();
+
+        // Assert
+        assertTrue("Appointment should be available", isAvailable);
+    }
+}
+
