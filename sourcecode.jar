@@ -1,0 +1,24 @@
+public class HaircutBookingSystem {
+    private Map<String, Integer> availableSlots; // Store available time slots
+
+    public HaircutBookingSystem() {
+        availableSlots = new HashMap<>();
+        // Initialize available slots (e.g., 9 AM to 6 PM)
+        // You can customize this based on your business hours
+        // For simplicity, let's assume each slot is 30 minutes
+        for (int hour = 9; hour <= 18; hour++) {
+            availableSlots.put(hour + ":00", 2); // Two slots available per hour
+        }
+    }
+
+    public boolean bookSlot(String time) {
+        if (availableSlots.containsKey(time) && availableSlots.get(time) > 0) {
+            availableSlots.put(time, availableSlots.get(time) - 1);
+            return true; // Booking successful
+        }
+        return false; // Slot not available
+    }
+
+    // Other methods (e.g., cancel booking, get available slots) can be added here
+}
+
